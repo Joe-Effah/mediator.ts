@@ -1,8 +1,11 @@
-name: Release
+name: CD
 
 on:
   release:
     types: [published]
+  workflow_run:
+    workflows: ['CI']
+    types: [completed]
 
 permissions:
   contents: write
