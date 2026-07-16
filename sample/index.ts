@@ -9,7 +9,6 @@ import { StudentRepository } from "./repository/repository";
 export async function runStudentFeature() {
   const repository = new StudentRepository();
 
-  Mediator.useBehavior(validationBehavior);
   Mediator.registerCommand(AddStudentCommand, new AddStudentHandler(repository));
   Mediator.registerCommand(UpdateStudentNameCommand, new UpdateStudentNameHandler(repository));
   Mediator.registerQuery(GetLatestStudentInClassQuery, new GetLatestStudentInClassHandler(repository));
