@@ -1,8 +1,19 @@
 {
-  "name": "cqrs",
-  "engines": {
-    "bun": ">=1.0.0"
+   "name": "@joe-effah/cqrs",
+  "version": "0.1.0",
+  "description": "CQRS library for Bun and TypeScript",
+  "license": "MIT",
+
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
   },
+  "files": [
+    "lib",
+    "index.ts",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "bun test",
     "start": "bun sample/index.ts"
@@ -18,5 +29,5 @@
   },
   "module": "index.ts",
   "type": "module",
-  "private": true
+  "private": false
 }
