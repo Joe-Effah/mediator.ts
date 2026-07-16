@@ -14,10 +14,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bun
+      - name: Setup Bun (action)
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: 'latest'
+          bun-version: '1.5.0'
+
+      - name: "Fallback: Install Bun if missing"
+        run: |
+          if ! command -v bun >/dev/null 2>&1; then
+            echo "Bun not found — installing via bun.sh installer"
+            curl -fsSL https://bun.sh/install | bash
+            export PATH="$HOME/.bun/bin:$PATH"
+          fi
+          bun --version
 
       - name: Install dependencies
         run: bun install
