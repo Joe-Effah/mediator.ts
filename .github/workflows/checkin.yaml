@@ -3,7 +3,9 @@ name: Check-in
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-
+  push:
+    branches:
+      - main
 jobs:
   check:
     name: Check PR (tests + package artifact)
