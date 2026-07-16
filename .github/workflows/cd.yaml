@@ -28,20 +28,12 @@ jobs:
         run: |
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: 'latest'
-          
       - name: Install dependencies
-        run: bun install
-
-      - name: Run tests
-        run: bun test
+        run: npm install
 
       - name: Create package tarball
         run: |
-          bun x npm pack --silent
+         npx pack --silent
 
       - name: Publish to npm
         env:
