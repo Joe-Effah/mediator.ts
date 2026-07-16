@@ -25,11 +25,17 @@ jobs:
 
       - run: npm pack
 
+      - name: Debug Context
+        run: |
+           echo "Event: ${{ github.event_name }}"
+           echo "Ref: ${{ github.ref }}"
+           echo "Tag: ${{ github.event.release.tag_name }}"
+
       - name: Upload package
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release upload \
-            "${{ github.event.release.tag_name }}" \
+            "${{ github.event_name }}" \
             *.tgz \
             --clobber
