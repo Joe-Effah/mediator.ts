@@ -30,6 +30,8 @@ Implemented (done)
   - Added tests for dispatch, pipeline validation, logging hooks, and registry clear behavior.
 
 Suggested / Pending Improvements (later)
+- Document all classes
+- Try to hit 100% on JSR
 - Publishing & secrets
   - Add `NPM_TOKEN` to repository secrets (required for `npm publish`).
   - Consider switching CD to tag-based publishing instead of releases, if desired.
