@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   release:
+    if: ${{ github.event_name == 'release' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
     runs-on: ubuntu-latest
 
     steps:
@@ -32,6 +33,7 @@ jobs:
            echo "Tag: ${{ github.event.release.tag_name }}"
 
       - name: Upload package
+        if: ${{ github.event_name == 'release' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
