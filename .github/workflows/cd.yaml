@@ -35,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh upload \
+          gh release \
             "package-tarball" \
             *.tgz \
             --clobber
