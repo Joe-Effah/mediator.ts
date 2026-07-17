@@ -1,7 +1,7 @@
 {
-   "name": "@joe-grekens-org/cqrs.ts",
+   "name": "@joeeffah/cqrs",
   "version": "0.1.0",
-  "description": "CQRS library for Bun and TypeScript",
+  "description": "CQRS library for TypeScript",
   "license": "MIT",
 
   "main": "./index.ts",
